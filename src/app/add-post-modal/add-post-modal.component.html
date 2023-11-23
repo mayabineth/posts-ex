@@ -1,0 +1,37 @@
+<aside class="modal-container">
+  <div class="modal">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <h4 *ngIf="alertShow">{{ alert }}</h4>
+      <div
+        id="user-data"
+        class="add-form"
+        ngModelGroup="post"
+        #post="ngModelGroup"
+      >
+        <input
+          type="text"
+          ngModel
+          name="title"
+          required
+          class="field"
+          placeholder="Enter title ..."
+        />
+        <textarea
+          type="text"
+          ngModel
+          name="body"
+          required
+          class="field"
+          placeholder="Enter body ..."
+          rows="4"
+        ></textarea>
+        <div class="flex-row">
+          <button class="btn" type="submit">submit</button>
+          <button (click)="closeModal()" class="btn" type="button">
+            close
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</aside>

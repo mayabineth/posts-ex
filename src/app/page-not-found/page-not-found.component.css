@@ -1,0 +1,7 @@
+.section {
+    width: 90vw;
+    margin: 1rem auto;
+    padding: 2rem 0;
+    max-width: var(--max-width);
+    text-align: center;
+  }

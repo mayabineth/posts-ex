@@ -1,0 +1,24 @@
+<form (ngSubmit)="onSubmit()" #f="ngForm" class="seciton">
+  <div class="edit-post" ngModelGroup="edit" #edit="ngModelGroup">
+    <input
+      (focus)="onFocus()"
+      (blur)="onBlur()"
+      type="text"
+      ngModel
+      name="title"
+      required
+      class="field"
+    />
+    <textarea
+      (focus)="onFocus()"
+      (blur)="onBlur()"
+      type="text"
+      ngModel
+      name="body"
+      required
+      class="field"
+      rows="4"
+    ></textarea>
+    <button [disabled]="!f.valid" class="btn" type="submit">save</button>
+  </div>
+</form>

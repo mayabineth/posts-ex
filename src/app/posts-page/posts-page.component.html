@@ -1,0 +1,44 @@
+<div class="section">
+  <div class="flex-row-space">
+    <input
+      class="filter-input"
+      placeholder="Enter filter title ..."
+      type="text"
+      (input)="filterPost($event)"
+      #filterValue
+    />
+    <mat-icon matTooltip="add post" class="add-box-icon" (click)="addPost()">
+      add_box
+    </mat-icon>
+  </div>
+  <div
+    class="post"
+    *ngFor="let post of posts | filterPosts : filterValue.value"
+  >
+    <div (click)="expandPost(post.id)">
+      <div class="flex-row-space">
+        <h4>{{ post.title }}</h4>
+        <mat-icon matTooltip="expand" class="open-in-full-icon"
+          >open_in_full</mat-icon
+        >
+      </div>
+      <p>{{ post.body }}</p>
+    </div>
+    <div *ngIf="postId == post.id">
+      <div class="flex-row-space details">
+        <div class="post-details">
+          <p>id: {{ post.id }}</p>
+          <p>userId: {{ post.userId }}</p>
+        </div>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="deletePost(post.id)">delete</button>
+          <button mat-menu-item (click)="editPost()">edit</button>
+        </mat-menu>
+      </div>
+      <router-outlet *ngIf="toggleEditBtn && post.userId"></router-outlet>
+    </div>
+  </div>
+</div>

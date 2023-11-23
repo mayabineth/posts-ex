@@ -1,0 +1,45 @@
+.modal-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal {
+  background: var(--clr-white);
+  width: 80vw;
+  max-width: 500px;
+  border-radius: var(--radius);
+  padding-top: 3rem;
+  text-align: center;
+}
+.add-form {
+  display: grid;
+  align-items: center;
+  gap: 1rem;
+}
+.field {
+  padding: 0.25rem;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  border: transparent;
+  background-color: #f5f6f7;
+}
+.btn {
+  background-color: var(--clr-grey-5);
+  border-color: transparent;
+  align-items: center;
+  padding: 0.25rem;
+  text-transform: capitalize;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 1rem;
+  color: var(--clr-white);
+  width: 50%;
+}
+.btn:hover {
+  background-color: var(--clr-grey-1);
+}
+.flex-row {
+  display: flex;
+  gap: 1rem;
+}
