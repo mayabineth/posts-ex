@@ -22,7 +22,6 @@ nav {
 .list-icon {
   color: var(--clr-white);
   transform: scale(2);
-  cursor: pointer;
 }
 .red {
   color: var(--clr-red-light);
